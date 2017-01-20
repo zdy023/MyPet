@@ -1,0 +1,5 @@
+created interface Barkable
+created class Game
+need make Dog implement interface Barkable
+need add List of Game to Pet
+need create GuessNumberGame extended Game
