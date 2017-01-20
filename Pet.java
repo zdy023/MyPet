@@ -96,4 +96,55 @@ public abstract class Pet
 		this.age = 0;
 		this.hp = 85;
 	}
+	/**
+	*获得物种名称，由子类实现.
+	*@return the species name of your pet
+	*/
+	abstract public String getSpecies();
+	/*class InLine extends Pet
+	{
+		public InLine(String name)
+		{
+			super(name);
+		}
+		public String getSpecies()
+		{
+			return "Default.";
+		}
+	}*/
+	public static void main(String[] args)
+	{
+		Pet expe_ = new InLine("Just a test!");
+		System.out.println(expe_.getName());
+		expe_.setName("OK,OK,I'd changed the name.");
+		System.out.println(expe_.getName());
+		System.out.println("Age: " + expe_.getAge());
+		expe_.grow();
+		System.out.println("Age Now: " + expe_.getAge());
+		expe_.grow();
+		expe_.grow();
+		System.out.println("This time I let it grow twince: " + expe_.getAge());
+		System.out.println("HP: " + expe_.getHP());
+		expe_.minusHP();
+		System.out.println("HP Now: " + expe_.getHP());
+		expe_.minusHP();
+		expe_.minusHP();
+		expe_.minusHP();
+		System.out.println("HP-3: " + expe_.getHP());
+		expe_.feed(3);
+		System.out.println("And now if the hp is the same as the 2nd one the it's right with the method feed()" + expe_.getHP());
+		expe_.rebirth();
+		System.out.println(expe_.getSpecies() + " " + expe_.getAge() + " " + expe_.getHP());
+	}
+}
+class InLine extends Pet
+{
+	public InLine(String name)
+	{
+		super(name);
+	}
+	public String getSpecies()
+	{
+		return "Default.";
+	}
 }
