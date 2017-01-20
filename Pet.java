@@ -100,7 +100,7 @@ public abstract class Pet
 	*获得物种名称，由子类实现.
 	*@return the species name of your pet
 	*/
-	abstract public String getSpecies();
+	public abstract String getSpecies();
 	/*class InLine extends Pet
 	{
 		public InLine(String name)
