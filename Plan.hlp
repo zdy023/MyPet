@@ -1,5 +1,0 @@
-interface Barkable
-method bark();
-objects Game
-method load(); and just play
-We can add these objects to the class MyPet; and use the collection Map;
