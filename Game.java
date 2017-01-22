@@ -1,5 +1,15 @@
 package alls.game;
+/**
+*<p>
+*	游戏类。
+*</p>
+*@author David Chang
+*@version 1.1
+*/
 public abstract class Game
 {
-	public abstract void game();
+	/**
+	*用于加载游戏类，进行游戏.
+	*/
+	public abstract void load();
 }
