@@ -1,13 +1,17 @@
 package alls.pets;
+import java.util.ArrayList;
+import alls.game.Game;
 /**
 *<h1>Pet</h1>
 *@author David Chang
+*@version 1.1
 */
 public abstract class Pet
 {
 	protected String name;
 	protected int age;
 	protected int hp;
+	protected ArrayList<Game> games;
 	/**
 	*构造函数.
 	*<p>
@@ -20,6 +24,35 @@ public abstract class Pet
 		this.name = name;
 		this.age = 0;
 		this.hp = 100;
+		
+		games = new ArrayList<Game>();
+	}
+	/**
+	*添加游戏.
+	*<p>
+	*	为宠物添加一个新游戏。
+	*</p>
+	*@param newGame 添加的新游戏
+	*/
+	public void addGame(Game newGame)
+	{
+		games.add(newGame);
+	}
+	/**
+	*开始一个游戏.
+	*有可能发生ArrayIndexOutOfBoundsException，但不会将其抛出。
+	*@param index 要开始的游戏的序号，从零开始。
+	*/
+	public void play(int index)
+	{
+		try
+		{
+			games.get(index).load();
+		}
+		catch(ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println("Wrong index!The number of the games the " + this.getSpecies() + " can play is " + games.size() + ".");
+		}
 	}
 	/**
 	*重命名宠物.
@@ -100,7 +133,7 @@ public abstract class Pet
 	*获得物种名称，由子类实现.
 	*@return the species name of your pet
 	*/
-	abstract public String getSpecies();
+	public abstract String getSpecies();
 	/*class InLine extends Pet
 	{
 		public InLine(String name)
