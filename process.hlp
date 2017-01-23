@@ -1,7 +1,0 @@
-created interface Barkable
-created class Game
-made Dog implement interface Barkable
-added List of Game to Pet
-created GuessNumberGame extended Game
-need to create DataManager
-need to use DataManager in the main programme
