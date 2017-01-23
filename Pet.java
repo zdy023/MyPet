@@ -111,12 +111,13 @@ public abstract class Pet
 	/**
 	*使hp下降.
 	*<p>
-	*	正常的体力消耗。
+	*	各种原因的体力消耗。
 	*</p>
+	*@param dHP 下降的HP
 	*/
-	public void minusHP()
+	public void minusHP(int dHP)
 	{
-		this.hp--;
+		this.hp -= dHP;
 	}
 	/**
 	*重生.
@@ -158,11 +159,9 @@ public abstract class Pet
 		expe_.grow();
 		System.out.println("This time I let it grow twince: " + expe_.getAge());
 		System.out.println("HP: " + expe_.getHP());
-		expe_.minusHP();
+		expe_.minusHP(1);
 		System.out.println("HP Now: " + expe_.getHP());
-		expe_.minusHP();
-		expe_.minusHP();
-		expe_.minusHP();
+		expe_.minusHP(3);
 		System.out.println("HP-3: " + expe_.getHP());
 		expe_.feed(3);
 		System.out.println("And now if the hp is the same as the 2nd one the it's right with the method feed()" + expe_.getHP());
