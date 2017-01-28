@@ -151,7 +151,7 @@ public class DataManager
 	}
 	/**
 	*从文件读入数据.
-	*@throws IOException
+	*@exception IOException
 	*/
 	public void read() throws IOException
 	{
